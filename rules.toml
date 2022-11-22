@@ -1,0 +1,28 @@
+[[command]]
+ input = "g (.+)"
+ output = "https://www.google.com/search?q={}"
+ default = true
+
+ [[command]]
+ input = "a (.+)"
+ output = "https://www.amazon.com/s?k={}"
+
+ [[command]]
+ input = "gh (.+)"
+ output = "https://github.com/search?q={}"
+ 
+ [[command]]
+ input = "^newmail$"
+ output = "https://mail.google.com/mail/?view=cm"
+
+[[command]]
+ input = "^newdoc$"
+ output = "https://docs.google.com/document/u/0/create"
+
+[[command]]
+ input = "tw @(.+)"
+ output = "https://twitter.com/{}"
+
+[[command]]
+ input = "tw ([^@].+)"
+ output = "https://twitter.com/search?q={}"
