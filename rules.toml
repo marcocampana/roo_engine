@@ -9,8 +9,16 @@
 
  [[command]]
  input = "gh (.+)"
- output = "https://github.com/search?q={}"
- 
+ output = "https://github.com/search?q={}" 
+
+ [[command]]
+ input = "ghi (.+)"
+ output = "https://github.com/search?q={}&type=issues"
+
+ [[command]]
+ input = "ghc (.+)"
+ output = "https://github.com/search?q={}&type=code"
+
  [[command]]
  input = "^newmail$"
  output = "https://mail.google.com/mail/?view=cm"

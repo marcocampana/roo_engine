@@ -14,6 +14,12 @@ fn handle_input_returns_uri_for_the_given_input() {
     let uri = server::handle_input(&String::from("gh hello world!"), &rules);
     assert_eq!(uri.to_string(), "https://github.com/search?q=hello%20world!");
 
+    let uri = server::handle_input(&String::from("ghi hello world!"), &rules);
+    assert_eq!(uri.to_string(), "https://github.com/search?q=hello%20world!&type=issues");
+
+    let uri = server::handle_input(&String::from("ghc hello world!"), &rules);
+    assert_eq!(uri.to_string(), "https://github.com/search?q=hello%20world!&type=code");
+
     let uri = server::handle_input(&String::from("newmail"), &rules);
     assert_eq!(uri.to_string(), "https://mail.google.com/mail/?view=cm");
 
