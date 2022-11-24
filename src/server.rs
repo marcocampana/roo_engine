@@ -4,6 +4,9 @@ use warp::{
     Filter, hyper::Uri, Rejection, Reply,
 };
 
+#[cfg(test)]
+mod server_tests;
+
 #[tokio::main]
 pub async fn start(port: &u16, rules: Vec<(Regex, String)>) {
     let app = warp::get().and(filter_query(rules));
@@ -13,7 +16,7 @@ pub async fn start(port: &u16, rules: Vec<(Regex, String)>) {
         .await
 }
 
-pub fn filter_query(rules: Vec<(Regex, String)>) -> impl Filter<Extract = (impl Reply,), Error = Rejection> + Clone {
+fn filter_query(rules: Vec<(Regex, String)>) -> impl Filter<Extract = (impl Reply,), Error = Rejection> + Clone {
     return warp::query::<HashMap<String, String>>()
         .map(move |p: HashMap<String, String>| match p.get("q") {
             Some(q) => warp::redirect::temporary(handle_input(q, &rules)),
@@ -21,7 +24,7 @@ pub fn filter_query(rules: Vec<(Regex, String)>) -> impl Filter<Extract = (impl 
         });
 }
 
-pub fn handle_input(q: &String, rules: &Vec<(Regex, String)>) -> Uri {    
+fn handle_input(q: &String, rules: &Vec<(Regex, String)>) -> Uri {    
     for (input, output) in rules {
         if input.is_match(q) {
 

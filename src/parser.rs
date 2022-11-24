@@ -2,6 +2,9 @@ use std::fs;
 use regex::Regex;
 use serde::Deserialize;
 
+#[cfg(test)]
+mod parser_tests;
+
 #[derive(Deserialize)]
 struct Command {
     input: String,
