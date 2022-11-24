@@ -32,10 +32,19 @@ pub fn handle_input(q: &String, rules: &Vec<(Regex, String)>) -> Uri {
                 }
             }
 
-            return s.replace(' ', "%20").parse::<Uri>().unwrap();
+            return encode_url(&s).parse::<Uri>().unwrap();
         }
     }
 
-    // TODO handle default is there is not match
-    return "/help.html".parse().unwrap();
+    return get_default_uri(q);
 } 
+
+fn get_default_uri(q: &String) -> Uri {
+    let default_uri = "https://www.google.com/search?q={}".replace("{}", &encode_url(q));
+
+    return default_uri.parse::<Uri>().unwrap();
+}
+
+fn encode_url(s: &String) -> String {
+    return s.replace(" ", "%20");
+}

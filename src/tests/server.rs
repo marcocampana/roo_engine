@@ -34,11 +34,11 @@ fn handle_input_returns_uri_for_the_given_input() {
 }
 
 #[test]
-fn handle_input_when_cmd_is_not_found_it_should_return_default_uri() {
+fn handle_input_when_command_is_unknown_returns_default_uri() {
     let rules = parser::load_config(&String::from("rules.toml"));
 
     let uri = server::handle_input(&String::from("unknown command"), &rules);
-    assert_eq!(uri.to_string(), "/help.html");
+    assert_eq!(uri.to_string(), "https://www.google.com/search?q=unknown%20command");
 }
 
 #[tokio::test]
