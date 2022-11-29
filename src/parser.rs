@@ -22,7 +22,7 @@ pub fn load_config(path: &String) -> Vec<(Regex, String)> {
     
     let config: Config = toml::from_str(&contents).unwrap();
 
-    let mut rules: Vec<(Regex, String)>  = vec![];
+    let mut rules: Vec<(Regex, String)> = vec![];
 
     for command in config.command {
         let input = Regex::new(&command.input).unwrap();

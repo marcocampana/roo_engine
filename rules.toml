@@ -1,7 +1,6 @@
 [[command]]
  input = "g (.+)"
  output = "https://www.google.com/search?q={}"
- default = true
 
  [[command]]
  input = "a (.+)"
@@ -34,3 +33,11 @@
 [[command]]
  input = "tw ([^@].+)"
  output = "https://twitter.com/search?q={}"
+
+[[command]]
+ input = "(i-.+)$"
+ output = "https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#InstanceDetails:instanceId={}"
+
+[[command]]
+ input = "(vpc-.+)$"
+ output = "https://us-east-1.console.aws.amazon.com/vpc/home?region=us-east-1#VpcDetails:VpcId={}"
