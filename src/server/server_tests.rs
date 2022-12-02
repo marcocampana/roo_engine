@@ -11,6 +11,9 @@ fn handle_input_returns_uri_for_the_given_input() {
     let uri = server::handle_input(&String::from("a hello world!"), &rules);
     assert_eq!(uri, "https://www.amazon.com/s?k=hello%20world!");
 
+    let uri = server::handle_input(&String::from("cal"), &rules);
+    assert_eq!(uri, "https://calendar.google.com/");
+
     let uri = server::handle_input(&String::from("gh hello world!"), &rules);
     assert_eq!(uri, "https://github.com/search?q=hello%20world!");
 
@@ -25,6 +28,27 @@ fn handle_input_returns_uri_for_the_given_input() {
 
     let uri = server::handle_input(&String::from("newdoc"), &rules);
     assert_eq!(uri, "https://docs.google.com/document/u/0/create");
+
+    let uri = server::handle_input(&String::from("newsheet"), &rules);
+    assert_eq!(uri, "https://docs.google.com/spreadsheets/u/0/create");
+
+    let uri = server::handle_input(&String::from("y"), &rules);
+    assert_eq!(uri, "https://www.youtube.com");
+
+    let uri = server::handle_input(&String::from("y rustlang"), &rules);
+    assert_eq!(uri, "https://www.youtube.com/results?search_query=rustlang");
+
+    let uri = server::handle_input(&String::from("maps"), &rules);
+    assert_eq!(uri, "https://www.google.com/maps");
+
+    let uri = server::handle_input(&String::from("maps colosseum rome"), &rules);
+    assert_eq!(uri, "https://www.google.com/maps/search/colosseum%20rome");
+
+    let uri = server::handle_input(&String::from("drive"), &rules);
+    assert_eq!(uri, "https://drive.google.com/drive/u/0/my-drive");
+
+    let uri = server::handle_input(&String::from("drive my file"), &rules);
+    assert_eq!(uri, "https://drive.google.com/drive/u/0/search?q=my%20file");
 
     let uri = server::handle_input(&String::from("tw @marcocampana"), &rules);
     assert_eq!(uri, "https://twitter.com/marcocampana");

@@ -1,22 +1,14 @@
 [[command]]
- input = "g (.+)"
+ input = "^g (.+)$"
  output = "https://www.google.com/search?q={}"
 
  [[command]]
- input = "a (.+)"
+ input = "^a (.+)$"
  output = "https://www.amazon.com/s?k={}"
 
  [[command]]
- input = "gh (.+)"
- output = "https://github.com/search?q={}" 
-
- [[command]]
- input = "ghi (.+)"
- output = "https://github.com/search?q={}&type=issues"
-
- [[command]]
- input = "ghc (.+)"
- output = "https://github.com/search?q={}&type=code"
+ input = "^cal$"
+ output = "https://calendar.google.com/"
 
  [[command]]
  input = "^newmail$"
@@ -27,17 +19,57 @@
  output = "https://docs.google.com/document/u/0/create"
 
 [[command]]
- input = "tw @(.+)"
+ input = "^newsheet$"
+ output = "https://docs.google.com/spreadsheets/u/0/create"
+
+[[command]]
+ input = "^y$"
+ output = "https://www.youtube.com"
+
+[[command]]
+ input = "^y (.+)$"
+ output = "https://www.youtube.com/results?search_query={}"
+
+[[command]]
+ input = "^maps$"
+ output = "https://www.google.com/maps"
+
+[[command]]
+ input = "^maps (.+)$"
+ output = "https://www.google.com/maps/search/{}"
+
+[[command]]
+ input = "^drive$"
+ output = "https://drive.google.com/drive/u/0/my-drive"
+
+[[command]]
+ input = "^drive (.+)$"
+ output = "https://drive.google.com/drive/u/0/search?q={}"
+
+ [[command]]
+ input = "^gh (.+)$"
+ output = "https://github.com/search?q={}"
+
+ [[command]]
+ input = "^ghi (.+)$"
+ output = "https://github.com/search?q={}&type=issues"
+
+ [[command]]
+ input = "^ghc (.+)$"
+ output = "https://github.com/search?q={}&type=code"
+
+[[command]]
+ input = "^tw @(.+)$"
  output = "https://twitter.com/{}"
 
 [[command]]
- input = "tw ([^@].+)"
+ input = "^tw ([^@].+)$"
  output = "https://twitter.com/search?q={}"
 
 [[command]]
- input = "(i-.+)$"
+ input = "^(i-.+)$"
  output = "https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#InstanceDetails:instanceId={}"
 
 [[command]]
- input = "(vpc-.+)$"
+ input = "^(vpc-.+)$"
  output = "https://us-east-1.console.aws.amazon.com/vpc/home?region=us-east-1#VpcDetails:VpcId={}"
