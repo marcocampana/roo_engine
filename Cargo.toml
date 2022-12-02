@@ -3,12 +3,12 @@ name = "roo"
 version = "0.1.0"
 edition = "2021"
 authors = ["Marco Campana <m.campana@gmail.com>"]
-license = ""
+license = "MIT"
 description = "Roo is a smart bookmarking and productivity tool that works as a custom search engine for your browser"
 repository = "https://github.com/marcocampana/roo"
 readme = "README.md"
 keywords = ["cli", "search", "productivity", "bookmarking"]
-include = ["/rules.toml"]
+include = ["./rules.toml"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
