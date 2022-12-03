@@ -1,16 +1,16 @@
 [package]
-name = "roo"
+name = "roo_engine"
 version = "0.1.0"
 edition = "2021"
 authors = ["Marco Campana <m.campana@gmail.com>"]
 license = "MIT"
 description = "Roo is a smart bookmarking and productivity tool that works as a custom search engine for your browser"
-repository = "https://github.com/marcocampana/roo"
+repository = "https://github.com/marcocampana/roo_engine"
 readme = "README.md"
 keywords = ["cli", "search", "productivity", "bookmarking"]
-include = ["./rules.toml"]
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[package.metadata.files]
+"rules.toml" = ["rules.toml"]
 
 [dependencies]
 toml = "0.4.2"

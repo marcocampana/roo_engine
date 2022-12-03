@@ -2,7 +2,7 @@
 
 use clap::{arg, command, ArgMatches};
 use regex::Regex;
-use roo::{server, parser};
+use roo_engine::{server, parser};
 use rocket::{response::Redirect, State};
 
 #[launch]
@@ -35,7 +35,7 @@ fn parse_arguments() -> ArgMatches {
     let matches = command!()
         .arg(arg!(--address <VALUE>).required(false).default_value("127.0.0.1"))
         .arg(arg!(--port <VALUE>).required(false).default_value("3030"))
-        .arg(arg!(--path <VALUE>).required(false).default_value("./rules.toml"))
+        .arg(arg!(--path <VALUE>).required(false).default_value("rules.toml"))
         .get_matches();
 
     return matches;
