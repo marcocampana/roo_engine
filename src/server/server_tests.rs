@@ -3,7 +3,7 @@ use crate::parser;
 
 #[test]
 fn handle_input_returns_uri_for_the_given_input() {
-    let rules = parser::load_config(&String::from("rules.toml"));
+    let rules = parser::get_default_rules();
 
     let uri = server::handle_input(&String::from("g hello world!"), &rules);
     assert_eq!(uri, "https://www.google.com/search?q=hello%20world!");

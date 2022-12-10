@@ -1,75 +1,79 @@
 [[command]]
- input = "^g (.+)$"
- output = "https://www.google.com/search?q={}"
-
- [[command]]
- input = "^a (.+)$"
- output = "https://www.amazon.com/s?k={}"
-
- [[command]]
- input = "^cal$"
- output = "https://calendar.google.com/"
-
- [[command]]
- input = "^newmail$"
- output = "https://mail.google.com/mail/?view=cm"
+input = "^g (.+)$"
+output = "https://www.google.com/search?q={}"
 
 [[command]]
- input = "^newdoc$"
- output = "https://docs.google.com/document/u/0/create"
+input = "^a (.+)$"
+output = "https://www.amazon.com/s?k={}"
 
 [[command]]
- input = "^newsheet$"
- output = "https://docs.google.com/spreadsheets/u/0/create"
+input = "^cal$"
+output = "https://calendar.google.com/"
 
 [[command]]
- input = "^y$"
- output = "https://www.youtube.com"
+input = "^newmail$"
+output = "https://mail.google.com/mail/?view=cm"
 
 [[command]]
- input = "^y (.+)$"
- output = "https://www.youtube.com/results?search_query={}"
+input = "^newdoc$"
+output = "https://docs.google.com/document/u/0/create"
 
 [[command]]
- input = "^maps$"
- output = "https://www.google.com/maps"
+input = "^newsheet$"
+output = "https://docs.google.com/spreadsheets/u/0/create"
 
 [[command]]
- input = "^maps (.+)$"
- output = "https://www.google.com/maps/search/{}"
+input = "^y$"
+output = "https://www.youtube.com"
 
 [[command]]
- input = "^drive$"
- output = "https://drive.google.com/drive/u/0/my-drive"
+input = "^y (.+)$"
+output = "https://www.youtube.com/results?search_query={}"
 
 [[command]]
- input = "^drive (.+)$"
- output = "https://drive.google.com/drive/u/0/search?q={}"
-
- [[command]]
- input = "^gh (.+)$"
- output = "https://github.com/search?q={}"
-
- [[command]]
- input = "^ghi (.+)$"
- output = "https://github.com/search?q={}&type=issues"
-
- [[command]]
- input = "^ghc (.+)$"
- output = "https://github.com/search?q={}&type=code"
+input = "^maps$"
+output = "https://www.google.com/maps"
 
 [[command]]
- input = "^tw @(.+)$"
- output = "https://twitter.com/{}"
+input = "^maps (.+)$"
+output = "https://www.google.com/maps/search/{}"
 
 [[command]]
- input = "^tw ([^@].+)$"
- output = "https://twitter.com/search?q={}"
+input = "^drive$"
+output = "https://drive.google.com/drive/u/0/my-drive"
 
 [[command]]
- input = "^(i-.+)$"
- output = "https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#InstanceDetails:instanceId={}"
+input = "^drive (.+)$"
+output = "https://drive.google.com/drive/u/0/search?q={}"
 
 [[command]]
- input = "^(vpc-.+)$"
- output = "https://us-east-1.console.aws.amazon.com/vpc/home?region=us-east-1#VpcDetails:VpcId={}"
+input = "^gh$"
+output = "https://github.com/"
+
+[[command]]
+input = "^gh (.+)$"
+output = "https://github.com/search?q={}"
+
+[[command]]
+input = "^ghi (.+)$"
+output = "https://github.com/search?q={}&type=issues"
+
+[[command]]
+input = "^ghc (.+)$"
+output = "https://github.com/search?q={}&type=code"
+
+[[command]]
+input = "^tw @(.+)$"
+output = "https://twitter.com/{}"
+
+[[command]]
+input = "^tw ([^@].+)$"
+output = "https://twitter.com/search?q={}"
+
+[[command]]
+input = "^(i-.+)$"
+output = "https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#InstanceDetails:instanceId={}"
+
+[[command]]
+input = "^(vpc-.+)$"
+output = "https://us-east-1.console.aws.amazon.com/vpc/home?region=us-east-1#VpcDetails:VpcId={}"

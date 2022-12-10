@@ -14,17 +14,27 @@ Roo is heavily inspired by [bunny1](https://github.com/ccheever/bunny1), a bookm
 
 Roo comes with a set of default commands that can be fully customized.
 
-| Tool                | Description                 | Command              | Example                       |
-|---------------------|-----------------------------|----------------------|-------------------------------|
-| Google              | Search Google.com           | `g <search query>`   | `g Rust language`             |
-| Google Docs         | Create a new GDoc           | `newdoc`             | `newdoc`                      |
-| Gmail               | Create a new mail in Gmail  | `newmail`            | `newmail`                     |
-| GitHub              | Search Github               | `gh <search query>`  | `gh marcocampana/roo`         |
-| GitHub              | Search Github Code          | `ghc <search query>` | `ghc hello world!`            |
-| GitHub              | Search Github Issues        | `ghi <search query>` | `ghi can't download internet` |
-| Twitter             | Go to profile               | `tw <handle>`        | `tw @marcocampana`            |
-| Twitter             | Search                      | `tw <search query>`  | `tw rust lang`                |
-| Amazon              | Search Amazon.com           | `a <search query>`   | `a 4k tvs`                    |
+| Tool                 | Description                 | Command                | Example                       |
+|----------------------|-----------------------------|------------------------|-------------------------------|
+| Google               | Search Google.com           | `g <search query>`     | `g Rust language`             |
+| Google Calendar      | Go to Google Calendar       | `cal`                  | `cal`                         |
+| Google Docs          | Create a new GDoc           | `newdoc`               | `newdoc`                      |
+| Gmail                | Create a new mail in Gmail  | `newmail`              | `newmail`                     |
+| Youtube              | Go to youtube               | `y`                    | `y`                           |
+| Youtube Search       | Search youtube.com          | `y <search query>`     | `y Rust videos`               |
+| Google Maps          | Go to Google Maps           | `maps`                 | `maps`                        |
+| Google Maps Search   | Search Google Maps          | `maps <search query>`  | `maps rome colosseum`         |
+| Google Drive         | Go to Google Drive          | `drive`                | `drive`                       |
+| Google Drive Search  | Search Google Drive         | `drive <search query>` | `drive blog post`             |
+| GitHub               | Go to Github                | `gh`                   | `gh`                          |
+| GitHub Search        | Search Github               | `gh <search query>`    | `gh hello world!`             |
+| GitHub Search code   | Search Github Code          | `ghc <search query>`   | `ghc hello world!`            |
+| GitHub Search issues | Search Github Issues        | `ghi <search query>`   | `ghi runtime exception`       |
+| Twitter              | Go to Twitter profile       | `tw <handle>`          | `tw @marcocampana`            |
+| Twitter              | Search                      | `tw <search query>`    | `tw rust lang`                |
+| Amazon               | Search Amazon.com           | `a <search query>`     | `a 4k tvs`                    |
+| AWS EC2              | Go to ec2 instance page     | `i-<instance_id>`      | `i-123`                       |
+| AWS VPC              | Go to VPC page              | `vpc-<vpc_id>`         | `vpc-123`                     |
 
 ## Installation
 

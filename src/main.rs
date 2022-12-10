@@ -6,14 +6,16 @@ use roo_engine::{server, parser};
 use rocket::{response::Redirect, State};
 
 #[launch]
-fn start_server() -> _{
+fn start_server() -> _ {
     let matches = parse_arguments();
     
-    let config_path = matches.get_one::<String>("path").expect("Path argument is required.");
+    let rules = match matches.get_one::<String>("rules_path") {
+        Some(config_path) => parser::load_config(config_path),
+        None => parser::get_default_rules()
+    };
+
     let address = matches.get_one::<String>("address").expect("Address argument is required.");
     let port = matches.get_one::<String>("port").unwrap().parse::<u16>().unwrap();
-
-    let rules = parser::load_config(config_path);
     
     let figment = rocket::Config::figment()
         .merge(("port", port))
@@ -35,7 +37,7 @@ fn parse_arguments() -> ArgMatches {
     let matches = command!()
         .arg(arg!(--address <VALUE>).required(false).default_value("127.0.0.1"))
         .arg(arg!(--port <VALUE>).required(false).default_value("3030"))
-        .arg(arg!(--path <VALUE>).required(false).default_value("rules.toml"))
+        .arg(arg!(--rules_path <VALUE>).required(false))
         .get_matches();
 
     return matches;
