@@ -42,15 +42,18 @@ Roo comes with a set of default commands that can be fully customized.
 
 ### Install from Crates.io
 
-If you are a Rust programmer you can install `roo` with `cargo`
+If you are a Rust programmer you can install `roo_engine` with `cargo`
 
 ```bash
-cargo install roo
+cargo install roo_engine
 ```
 
 ### Install with Homebrew (Mac)
 
-COMING SOON
+```bash
+brew tap marcocampana/tap
+brew install roo_engine
+```
 
 ### Check out the repository
 
@@ -60,7 +63,7 @@ If you are on MacOs, installing with homebrew is the recommended choice. However
 1. Check out the repository from GitHub
 
     ```bash
-    git checkout git@github.com:marcocampana/roo.git
+    git checkout git@github.com:marcocampana/roo_engine.git
     ```
 
 1. Run with Cargo
@@ -73,10 +76,10 @@ If you are on MacOs, installing with homebrew is the recommended choice. However
 
 ### Start the server
 
-If you installed the binary, you can start the server by executing the `roo` binary in your terminal:
+If you installed the binary, you can start the server by executing the `roo_engine` binary in your terminal:
 
 ```bash
-roo
+roo_engine
 ```
 
 or if you using `cargo` you can run:
@@ -85,7 +88,7 @@ or if you using `cargo` you can run:
 cargo run
 ```
 
-This will start `roo` on `127.0.0.1:3030` and expects a file named `rules.toml` in the current directory.
+This will start `roo_engine` on `127.0.0.1:3030`.
 
 You can use the `--help` argument to print all the available arguments you can use to run `roo`.
 
@@ -93,7 +96,7 @@ You can use the `--help` argument to print all the available arguments you can u
 roo --help
 ```
 
-### Add `Roo` as your default search engine in Chrome
+### Add `roo_engine` as your default search engine in Chrome
 
 1. Go to `chrome://settings/searchEngines`
 2. Click on `Add` under `Search engines` and use this URL `http://127.0.0.1:3030/?q=%s`
@@ -101,13 +104,13 @@ roo --help
 
 ### Define your own commands
 
-Roo takes your search query and tries to match it against the list of defined commands. Buil-in commands that ship with `Roo` are found in the [rules.toml](rules.toml) file. You can make your own file and tell `roo` where to find it at startup:
+`roo_engine` takes your search query and tries to match it against the list of defined commands. Buil-in commands that ship with `roo_engine` are found in the [parser.rs](parser.rs) file. You can make your own rules file and tell `roo` where to find it at startup:
 
 ```bash
 roo --path ~/my_file.toml
 ```
 
-A `roo` command looks like this:
+A `roo_engine` command looks like this:
 
 ```toml
 [[command]]
@@ -117,9 +120,11 @@ A `roo` command looks like this:
 
 the `input` string is a regex that is matched against the input of your browser's search bar. If a match is found the regex group captured in `()` is replaced in the `{}` found on the output string where the browser redirects. In the example above we are defining a command `g` that will match a string `g <search query>` that redirects to Google search to search for `<search query>`.
 
+See [rules.toml](rules.toml) for sample commands.
+
 ### Example: JIRA tasks
 
-If you are a JIRA user you know that JIRA task ids have the format `<PROJECT_PREFIX>-<TASK_NUMBER>`. You could write a custom command that allows you to just input the task id in your browser and be redirected to the task details. For example, let's assume that your project prefix is `MP` you could define the following rule:
+If you are a JIRA user you know that JIRA task ids have the format `<PROJECT_PREFIX>-<TASK_NUMBER>`. You could write a custom command that allows you to input the task id in your browser search bar and be redirected to the task details. For example, let's assume that your project prefix is `MP` you could define the following rule:
 
 ```toml
 [[command]]
@@ -129,7 +134,7 @@ If you are a JIRA user you know that JIRA task ids have the format `<PROJECT_PRE
 
 ## Run in the background
 
-On MacOs you can setup `launchd` to automatically run `roo` in the background.
+On MacOs you can setup `launchd` to automatically run `roo_engine` in the background.
 
 1. create a `plist` file in the `~/Library/LaunchAgents` folder (make sure to specify the absolute path
 to the code in your machine instead of`/Users/myuser`)
@@ -140,12 +145,12 @@ to the code in your machine instead of`/Users/myuser`)
 <plist version="1.0">
  <dict>
   <key>Label</key>
-  <string>com.marcocampana.roo</string>
+  <string>com.marcocampana.roo_engine</string>
   <key>RunAtLoad</key>
   <true/>
   
   <key>WorkingDirectory</key>
-  <string>/User/myuser/code/roo</string>
+  <string>/User/myuser/code/roo_engine</string>
 
   <key>ProgramArguments</key>
      <array>
@@ -159,14 +164,14 @@ to the code in your machine instead of`/Users/myuser`)
 2. Load the configuration to start the server:
 
  ```bash
- launchctl load ~/Library/LaunchAgents/com.marcocampana.roo.plist
+ launchctl load ~/Library/LaunchAgents/com.marcocampana.roo_engine.plist
  ```
 
 ## How to contribute
 
 Fork this repo and send a pull request. Make sure to have unit tests for any new functionality
 
-You can run the tests with:
+Run tests with:
 
 ```bash
 cargo test
