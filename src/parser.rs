@@ -19,85 +19,93 @@ struct Config {
 pub fn get_default_rules() -> Vec<(Regex, String)> {
     let commands = vec![
         (
-            "^g (.+)$".to_string(),
-            "https://www.google.com/search?q={}".to_string()
+            "^g (.+)$",
+            "https://www.google.com/search?q={}"
         ),
         (
-            "^a (.+)$".to_string(),
-            "https://www.amazon.com/s?k={}".to_string()
+            "^a (.+)$",
+            "https://www.amazon.com/s?k={}"
         ),
         (
-            "^cal$".to_string(),
-            "https://calendar.google.com/".to_string()
+            "^cal$",
+            "https://calendar.google.com/"
         ),
         (
-            "^newmail$".to_string(),
-            "https://mail.google.com/mail/?view=cm".to_string()
+            "^newmail$",
+            "https://mail.google.com/mail/?view=cm"
         ),
         (
-            "^newdoc$".to_string(),
-            "https://docs.google.com/document/u/0/create".to_string()
+            "^newdoc$",
+            "https://docs.google.com/document/u/0/create"
         ),
         (
-            "^newsheet$".to_string(),
-            "https://docs.google.com/spreadsheets/u/0/create".to_string()
+            "^newsheet$",
+            "https://docs.google.com/spreadsheets/u/0/create"
         ),
         (
-            "^y$".to_string(),
-            "https://www.youtube.com".to_string()
+            "^y$",
+            "https://www.youtube.com"
         ),
         (
-            "^y (.+)$".to_string(),
-            "https://www.youtube.com/results?search_query={}".to_string()
+            "^y (.+)$",
+            "https://www.youtube.com/results?search_query={}"
 
         ),
         (
-            "^maps$".to_string(),
-            "https://www.google.com/maps".to_string()
+            "^maps$",
+            "https://www.google.com/maps"
         ),
         (
-            "^maps (.+)$".to_string(),
-            "https://www.google.com/maps/search/{}".to_string()
+            "^maps (.+)$",
+            "https://www.google.com/maps/search/{}"
         ),
         (
-            "^drive$".to_string(),
-            "https://drive.google.com/drive/u/0/my-drive".to_string()
+            "^drive$",
+            "https://drive.google.com/drive/u/0/my-drive"
         ),
         (
-            "^drive (.+)$".to_string(),
-            "https://drive.google.com/drive/u/0/search?q={}".to_string()
+            "^drive (.+)$",
+            "https://drive.google.com/drive/u/0/search?q={}"
         ),
         (
-            "^gh$".to_string(),
-            "https://github.com/".to_string()
+            "^gh$",
+            "https://github.com/"
         ),
         (
-            "^gh (.+)$".to_string(),
-            "https://github.com/search?q={}".to_string()
+            "^gh (.+)$",
+            "https://github.com/search?q={}"
         ),
         (
-            "^ghc (.+)$".to_string(),
-            "https://github.com/search?q={}&type=code".to_string()
+            "^ghc (.+)$",
+            "https://github.com/search?q={}&type=code"
         ),
         (
-            "^ghi (.+)$".to_string(),
-            "https://github.com/search?q={}&type=issues".to_string()
+            "^ghi (.+)$",
+            "https://github.com/search?q={}&type=issues"
         ),
         (
-            "^tw @(.+)$".to_string(),
-            "https://twitter.com/{}".to_string()
+            "^tw @(.+)$",
+            "https://twitter.com/{}"
         ),
         (
-            "^tw ([^@].+)$".to_string(),
-            "https://twitter.com/search?q={}".to_string()
+            "^tw ([^@].+)$",
+            "https://twitter.com/search?q={}"
         ),
         (
-            "^(i-.+)$".to_string(),
-            "https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#InstanceDetails:instanceId={}".to_string()
+            "^redd (.+)$",
+            "https://www.reddit.com/search/?q={}"
         ),
         (
-            "^(vpc-.+)$".to_string(),
-            "https://us-east-1.console.aws.amazon.com/vpc/home?region=us-east-1#VpcDetails:VpcId={}".to_string()
+            "^pin (.+)$",
+            "https://www.pinterest.com/search/pins/?q={}"
+        ),
+        (
+            "^(i-.+)$",
+            "https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#InstanceDetails:instanceId={}"
+        ),
+        (
+            "^(vpc-.+)$",
+            "https://us-east-1.console.aws.amazon.com/vpc/home?region=us-east-1#VpcDetails:VpcId={}"
         ),
     ];
 

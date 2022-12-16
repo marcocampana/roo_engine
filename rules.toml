@@ -71,6 +71,14 @@ input = "^tw ([^@].+)$"
 output = "https://twitter.com/search?q={}"
 
 [[command]]
+input = "^redd (.+)$"
+output = "https://www.reddit.com/search/?q={}"
+
+[[command]]
+input = "^pin (.+)$"
+output = "https://www.pinterest.com/search/pins/?q={}"
+
+[[command]]
 input = "^(i-.+)$"
 output = "https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#InstanceDetails:instanceId={}"
 

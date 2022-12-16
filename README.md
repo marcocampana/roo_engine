@@ -30,6 +30,8 @@ Roo comes with a set of default commands that can be fully customized.
 | GitHub Search        | Search Github               | `gh <search query>`    | `gh hello world!`             |
 | GitHub Search code   | Search Github Code          | `ghc <search query>`   | `ghc hello world!`            |
 | GitHub Search issues | Search Github Issues        | `ghi <search query>`   | `ghi runtime exception`       |
+| Pinterest            | Search Pinterest            | `pin <search query>`   | `pin ideas`                   |
+| Reddit               | Search Reddit               | `redd <search query>`  | `redd Rust language`          |
 | Twitter              | Go to Twitter profile       | `tw <handle>`          | `tw @marcocampana`            |
 | Twitter              | Search                      | `tw <search query>`    | `tw rust lang`                |
 | Amazon               | Search Amazon.com           | `a <search query>`     | `a 4k tvs`                    |

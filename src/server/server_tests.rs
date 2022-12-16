@@ -56,6 +56,12 @@ fn handle_input_returns_uri_for_the_given_input() {
     let uri = server::handle_input(&String::from("tw rust language"), &rules);
     assert_eq!(uri, "https://twitter.com/search?q=rust%20language");
 
+    let uri = server::handle_input(&String::from("redd rust language"), &rules);
+    assert_eq!(uri, "https://www.reddit.com/search/?q=rust%20language");
+
+    let uri = server::handle_input(&String::from("pin ideas"), &rules);
+    assert_eq!(uri, "https://www.pinterest.com/search/pins/?q=ideas");
+
     let uri = server::handle_input(&String::from("i-1234567890abcdef0"), &rules);
     assert_eq!(uri, "https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#InstanceDetails:instanceId=i-1234567890abcdef0");
 
