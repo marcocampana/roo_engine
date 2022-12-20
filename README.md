@@ -4,7 +4,7 @@
 
 ## Introduction
 
-`Roo` (short for "Kangaroo") is a smart bookmarking and productivity CLI tool that works as a custom search engine for your browser, allowing you to quickly issue commands in your browser's search bar. It's a simple server that accepts a search query and redirects to the appropriate URI based on a set of predefined (and customizable) rules.
+`Roo (short for "Kangaroo") Engine` is a smart bookmarking and productivity CLI tool that works as a custom search engine for your browser, allowing you to quickly issue commands in your browser's search bar. It's a simple server that accepts a search query and redirects to the appropriate URI based on a set of predefined (and customizable) rules.
 
 `Roo` is useful for personal productivity, but many users run it on company servers to allow all employees to share a common way to quickly access internal and external tools, wikis, documentation and resources.
 
@@ -76,24 +76,24 @@ If you are on MacOs, installing with homebrew is the recommended choice. However
 
 ### Start the server
 
-If you installed the binary, you can start the server by executing the `roo_engine` binary in your terminal:
+If you installed the binary via `homebrew` or `crates.io`, you can start the server by executing the `roo_engine` binary in your terminal:
 
 ```bash
 roo_engine
 ```
 
-or if you using `cargo` you can run:
+or if you using `cargo` you can `cd` to the repository folder and run:
 
 ```bash
 cargo run
 ```
 
-This will start `roo_engine` on `127.0.0.1:3030`.
+When you run `roo_engine` you start an http service binding `127.0.0.1:3030` by default.
 
-You can use the `--help` argument to print all the available arguments you can use to run `roo`.
+You can use the `--help` argument to print all the available arguments you can use to run `roo_engine`.
 
 ```bash
-roo --help
+roo_engine --help
 ```
 
 ### Add `roo_engine` as your default search engine in Chrome
@@ -102,12 +102,14 @@ roo --help
 2. Click on `Add` under `Search engines` and use this URL `http://127.0.0.1:3030/?q=%s`
 3. Optionally set this as your default search engine for maximum productivity™
 
+Note: `roo_engine` can be used with any browser that supports custom search engines.
+
 ### Define your own commands
 
-`roo_engine` takes your search query and tries to match it against the list of defined commands. Buil-in commands that ship with `roo_engine` are found in the [parser.rs](parser.rs) file. You can make your own rules file and tell `roo` where to find it at startup:
+`roo_engine` tries to match your search query against a list of defined commands. Buil-in commands that ship with `roo_engine` are found in the [parser.rs](parser.rs) file. You can make your own rules file and tell `roo_engine` where to find it at startup:
 
 ```bash
-roo --path ~/my_file.toml
+roo_engine --path ~/my_file.toml
 ```
 
 A `roo_engine` command looks like this:
