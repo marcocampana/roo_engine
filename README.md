@@ -2,6 +2,8 @@
 
 ![Dall-E 2 generated logo](static/roo-logo.png)
 
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/marcocampana/roo_engine/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/marcocampana/roo_engine/tree/main)
+
 ## Introduction
 
 `Roo (short for "Kangaroo") Engine` is a smart bookmarking and productivity CLI tool that works as a custom search engine for your browser, allowing you to quickly issue commands in your browser's search bar. It's a simple server that accepts a search query and redirects to the appropriate URI based on a set of predefined (and customizable) rules.
